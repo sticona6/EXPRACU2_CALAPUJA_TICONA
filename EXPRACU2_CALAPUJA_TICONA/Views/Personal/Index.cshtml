@@ -4,7 +4,7 @@
 }
 
 <h2 class="page-header">
-    Mantenimiento Persona
+    Mantenimiento Personal
     <a href="~/Persona/AgregarEditar/"
        class="btn btn-info pull-rigth">Nuevo Personal</a>
 </h2>
@@ -13,10 +13,12 @@
     <thead>
         <tr>
             <th style="width:50px">Id</th>
-            <th style="width:50px">Nombre</th>
-            <th style="width:100px">Apellido</th>
-            <th style="width:100px">E-mail</th>
-            <th style="width:70px">Estado</th>
+            <th style="width:50px">Nombre y Apellido</th>
+            <th style="width:100px">DNI</th>
+            <th style="width:100px">Direccion</th>
+            <th style="width:100px">Tipo</th>
+
+            @*<th style="width:70px">Estado</th>*@
             <th style="width:250px"></th>
         </tr>
     </thead>
@@ -24,7 +26,7 @@
         @foreach (var m in Model)
         {
             <tr>
-                <th>@(m.)</th>
+                <th>@(m.id_personal),</th>
                 <th>@(m.)</th>
                 <th>@(m.)</th>
                 <th>@(m.)</th>
