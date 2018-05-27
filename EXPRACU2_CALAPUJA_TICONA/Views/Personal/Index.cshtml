@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th style="width:50px">Id</th>
-            <th style="width:50px">Nombre y Apellido</th>
+            <th style="width:50px">Nombres y Apellidos</th>
             <th style="width:100px">DNI</th>
             <th style="width:100px">Direccion</th>
             <th style="width:100px">Tipo</th>
@@ -26,7 +26,7 @@
         @foreach (var m in Model)
         {
             <tr>
-                <th>@(m.id_personal),</th>
+                <th>@(m.id_personal)</th>
                 <th>@(m.nombres_personal) @(m.apellidos_personal)</th>
                 <th>@(m.DNI_personal)</th>
                 <th>@(m.direccion_personal)</th>

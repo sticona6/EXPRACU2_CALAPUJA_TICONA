@@ -39,11 +39,11 @@
                 @Html.ValidationMessageFor(x => x.direccion_personal, null, new { @class = "label label-danger" })
             </div>
             <div class="form-group">
-                <input name="fecha_nacimiento" id="date" type="date">
+                <input name="fecha_nacimiento" id="date" type="date" class="form-control">
             </div>
             <div class="form-group">
                 @Html.Label("Tipo")
-                <select name="tipo_personal" class="custom-select form-control-lg">
+                <select name="tipo_personal" class="form-control">
                     <option @(Model.tipo_personal == "" ? "Selected" : "") value="">Seleccione</option>
                     <option @(Model.tipo_personal == "Administrador" ? "Selected" : "") value="Administrador" class="">Administrador</option>
                     <option @(Model.tipo_personal == "Empleado" ? "Selected" : "") value="Empleado" class="">Empleado</option>
