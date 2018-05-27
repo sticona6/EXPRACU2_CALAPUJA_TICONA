@@ -9,8 +9,7 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
     public partial class Asingacion_Escolar
     {
         [Key]
-        [StringLength(18)]
-        public string id_asignacion_escolar { get; set; }
+        public int id_asignacion_escolar { get; set; }
 
         public int numero_hijos { get; set; }
 

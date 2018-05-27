@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using EXPRACU2_CALAPUJA_TICONA.Models;
+
 namespace EXPRACU2_CALAPUJA_TICONA.Controllers
 {
     public class PersonalController : Controller
@@ -60,9 +62,9 @@ namespace EXPRACU2_CALAPUJA_TICONA.Controllers
         //Accion eliminar
         public ActionResult Eliminar(int id)
         {
-            personal.persona_id = id;
+            personal.id_personal = id;
             personal.Eliminar();
-            return Redirect("~/Persona");
+            return Redirect("~/Personal");
         }
 
     }

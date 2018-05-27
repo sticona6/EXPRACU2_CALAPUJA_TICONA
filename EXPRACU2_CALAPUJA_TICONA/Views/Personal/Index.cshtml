@@ -5,7 +5,7 @@
 
 <h2 class="page-header">
     Mantenimiento Personal
-    <a href="~/Persona/AgregarEditar/"
+    <a href="~/Personal/AgregarEditar/"
        class="btn btn-info pull-rigth">Nuevo Personal</a>
 </h2>
 
@@ -27,15 +27,15 @@
         {
             <tr>
                 <th>@(m.id_personal),</th>
-                <th>@(m.)</th>
-                <th>@(m.)</th>
-                <th>@(m.)</th>
-                <th>@(m. == "A" ? "Activo" : "Inactivo")</th>
+                <th>@(m.nombres_personal +" "+m.apellidos_personal)</th>
+                <th>@(m.DNI_personal)</th>
+                <th>@(m.direccion_personal)</th>
+                <th>@(m.tipo_personal)</th>
 
                 <th style="align-content:center">
-                    <a href="~/Persona/Ver/@m.persona_id" class="btn btn-xs btn-warning">Detalle</a>
-                    <a href="~/Persona/AgregarEditar/@m.persona_id" class="btn btn-xs btn-primary">Modificar</a>
-                    <a href="~/Persona/Eliminar/@m.persona_id" class="btn btn-xs btn-danger"
+                    <a href="~/Personal/Ver/@m.id_personal" class="btn btn-xs btn-warning">Detalle</a>
+                    <a href="~/Personal/AgregarEditar/@m.id_personal" class="btn btn-xs btn-primary">Modificar</a>
+                    <a href="~/Personal/Eliminar/@m.id_personal" class="btn btn-xs btn-danger"
                        onclick="return confirm('¿Esta Seguro que desea eliminar el registro?');">Eliminar</a>
                 </th>
             </tr>

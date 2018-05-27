@@ -6,6 +6,9 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    using System.Linq;
+    using System.Data.Entity;
+
     [Table("Personal")]
     public partial class Personal
     {
@@ -19,7 +22,6 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id_personal { get; set; }
 
         [StringLength(100)]
@@ -34,7 +36,7 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
         [StringLength(100)]
         public string direccion_personal { get; set; }
 
-        [StringLength(1)]
+        [StringLength(50)]
         public string tipo_personal { get; set; }
 
         public DateTime? fecha_nacimiento { get; set; }
@@ -50,5 +52,107 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Prestamo> Prestamo { get; set; }
+
+        //Crear el metodo Listar
+
+        public List<Personal> Listar() //retorna una colleccion
+        {
+            var persona = new List<Personal>();
+            try
+            {
+                //coneccion a la fuente de datos
+                using (var db = new Model_Personal())
+                {
+                    persona = db.Personal.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return persona;
+        }
+        //Metodo obtener 
+        public Personal Obtener(int id)//retorna un solo objeto
+        {
+            var persona = new Personal();
+            try
+            {
+                using (var db = new Model_Personal())
+                {
+                    persona = db.Personal.Where(x => x.id_personal == id)
+                        .SingleOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+            return persona;
+        }
+        //Metodo Buscar
+        public List<Personal> Buscar(string criterio)//retorna un solo objeto
+        {
+            var persona = new List<Personal>();
+            try
+            {
+                using (var db = new Model_Personal())
+                {
+                    persona = db.Personal
+                                .Where(x => x.nombres_personal.Contains(criterio) ||
+                                       x.apellidos_personal.Contains(criterio))
+                                       .ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+            return persona;
+        }
+        //Metodo guardar
+        public void Guardar()
+        {
+            try
+            {
+                using (var db = new Model_Personal())
+                {
+                    if (this.id_personal > 0)//cuando la llave primaria es identity solamante
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(this).State = EntityState.Added;
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        //Metodo eliminar
+        public void Eliminar()
+        {
+            try
+            {
+                using (var db = new Model_Personal())
+                {
+                    db.Entry(this).State = EntityState.Deleted;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
     }
 }

@@ -15,7 +15,6 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id_tipo_asignacion { get; set; }
 
         [StringLength(50)]

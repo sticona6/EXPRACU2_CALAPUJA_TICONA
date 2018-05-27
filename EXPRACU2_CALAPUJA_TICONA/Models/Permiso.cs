@@ -10,7 +10,6 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
     public partial class Permiso
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id_permiso { get; set; }
 
         public DateTime? fecha_permiso { get; set; }

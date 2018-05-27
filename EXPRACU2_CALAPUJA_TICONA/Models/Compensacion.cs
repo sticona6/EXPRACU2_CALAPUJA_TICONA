@@ -10,7 +10,6 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
     public partial class Compensacion
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id_compensacion { get; set; }
 
         [StringLength(150)]

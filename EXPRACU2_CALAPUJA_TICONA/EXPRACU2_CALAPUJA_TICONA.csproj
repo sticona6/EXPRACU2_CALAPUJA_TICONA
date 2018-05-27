@@ -140,6 +140,7 @@
     <Content Include="Views\Shared\Layout.cshtml" />
     <Content Include="Views\ViewStart.cshtml" />
     <Content Include="Views\Personal\Index.cshtml" />
+    <Content Include="Views\Personal\AgregarEditar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

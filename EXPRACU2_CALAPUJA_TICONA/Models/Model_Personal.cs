@@ -8,7 +8,7 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
     public partial class Model_Personal : DbContext
     {
         public Model_Personal()
-            : base("name=Model_Personal1")
+            : base("name=Model_Personal3")
         {
         }
 
@@ -25,11 +25,6 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Asingacion_Escolar>()
-                .Property(e => e.id_asignacion_escolar)
-                .IsFixedLength()
-                .IsUnicode(false);
-
             modelBuilder.Entity<Asingacion_Escolar>()
                 .Property(e => e.monto_total)
                 .HasPrecision(5, 2);
@@ -98,11 +93,6 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Prestamo>()
-                .Property(e => e.id_prestamo)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Prestamo>()
                 .Property(e => e.razon)
                 .IsUnicode(false);
 
@@ -113,11 +103,6 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
             modelBuilder.Entity<Prestamo>()
                 .Property(e => e.monto)
                 .HasPrecision(6, 2);
-
-            modelBuilder.Entity<Prestamo>()
-                .Property(e => e.id_tipo_pago_prestamo)
-                .IsFixedLength()
-                .IsUnicode(false);
 
             modelBuilder.Entity<Tipo_Asignacion>()
                 .Property(e => e.discapacidad)
@@ -175,11 +160,6 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
 
             modelBuilder.Entity<Tipo_Pago_Prestamo>()
                 .Property(e => e.morosidad)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Tipo_Pago_Prestamo>()
-                .Property(e => e.id_tipo_pago_prestamo)
                 .IsFixedLength()
                 .IsUnicode(false);
         }

@@ -1,0 +1,59 @@
+﻿@model EXPRACU2_CALAPUJA_TICONA.Models.Personal
+@{
+    ViewBag.Title = (Model.id_personal > 0 ? Model.nombres_personal : "Nuevo registro");
+}
+
+<h2>AgregarEditar</h2>
+
+<ol class="breadcrumb">
+    <li><a href="~/Personal">Personal</a></li>
+    <li class="active">@((Model.id_personal) > 0 ? Model.nombres_personal : "Nuevo resgistro")</li>
+</ol>
+@using (Html.BeginForm("Guardar", "Personal", FormMethod.Post, new { @id = "frm-personal" }))
+{
+    @Html.HiddenFor(x => x.id_personal)
+    <div class="panel panel-default">
+        <div class="panel-heading">Informacion de la Persona</div>
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.Label("Id:")
+                @Html.TextBoxFor(x => x.id_personal, new { @class = "form-control", disabled = true })
+            </div>
+            <div class="form-group">
+                @Html.Label("Nombres:")
+                @Html.TextBoxFor(x => x.nombres_personal, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Apellidos:")
+                @Html.TextBoxFor(x => x.apellidos_personal, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.apellidos_personal, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("DNI:")
+                @Html.TextBoxFor(x => x.DNI_personal, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.DNI_personal, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Direccion:")
+                @Html.TextBoxFor(x => x.direccion_personal, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.direccion_personal, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Tipo")
+                <select name="tipo_personal" class="custom-select form-control-lg">
+                    <option @(Model.tipo_personal == "" ? "Selected" : "") value="">Seleccione</option>
+                    <option @(Model.tipo_personal == "Administrador" ? "Selected" : "") value="Administrador" class="">Administrador</option>
+                    <option @(Model.tipo_personal == "Empleado" ? "Selected" : "") value="Empleado" class="">Empleado</option>
+                    @*<option @(Model.tipo_personal == "Usuario" ? "Selected" : "") value="Usuario" class="">Usuario</option>*@
+                </select>
+                @Html.ValidationMessageFor(x => x.tipo_personal, null, new { @class = "label label-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="text-right">
+        <button type="submit" class="btn btn-primary">Grabar</button>
+        <a href="~/Personal" class="btn btn-danger">Cancelar</a>
+    </div>
+}
+
+

@@ -10,8 +10,7 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
     public partial class Prestamo
     {
         [Key]
-        [StringLength(18)]
-        public string id_prestamo { get; set; }
+        public int id_prestamo { get; set; }
 
         [StringLength(250)]
         public string razon { get; set; }
@@ -25,8 +24,7 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
 
         public DateTime? fecha_pago { get; set; }
 
-        [StringLength(18)]
-        public string id_tipo_pago_prestamo { get; set; }
+        public int? id_tipo_pago_prestamo { get; set; }
 
         public int? id_personal { get; set; }
 

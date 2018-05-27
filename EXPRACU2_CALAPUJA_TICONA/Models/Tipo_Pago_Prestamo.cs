@@ -27,8 +27,7 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
         public string morosidad { get; set; }
 
         [Key]
-        [StringLength(18)]
-        public string id_tipo_pago_prestamo { get; set; }
+        public int id_tipo_pago_prestamo { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Prestamo> Prestamo { get; set; }

@@ -9,7 +9,6 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
     public partial class Control_Horario
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id_horario { get; set; }
 
         public DateTime hora_entrada { get; set; }
