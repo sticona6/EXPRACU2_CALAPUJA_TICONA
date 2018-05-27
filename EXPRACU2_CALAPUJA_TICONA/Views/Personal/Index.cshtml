@@ -1,0 +1,43 @@
+﻿@model List<EXPRACU2_CALAPUJA_TICONA.Models.Personal>
+@{
+    ViewBag.Title = "PERSONAL";
+}
+
+<h2 class="page-header">
+    Mantenimiento Persona
+    <a href="~/Persona/AgregarEditar/"
+       class="btn btn-info pull-rigth">Nuevo Personal</a>
+</h2>
+
+<table class="table table-striped table-bordered" id="datatable">
+    <thead>
+        <tr>
+            <th style="width:50px">Id</th>
+            <th style="width:50px">Nombre</th>
+            <th style="width:100px">Apellido</th>
+            <th style="width:100px">E-mail</th>
+            <th style="width:70px">Estado</th>
+            <th style="width:250px"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <th>@(m.)</th>
+                <th>@(m.)</th>
+                <th>@(m.)</th>
+                <th>@(m.)</th>
+                <th>@(m. == "A" ? "Activo" : "Inactivo")</th>
+
+                <th style="align-content:center">
+                    <a href="~/Persona/Ver/@m.persona_id" class="btn btn-xs btn-warning">Detalle</a>
+                    <a href="~/Persona/AgregarEditar/@m.persona_id" class="btn btn-xs btn-primary">Modificar</a>
+                    <a href="~/Persona/Eliminar/@m.persona_id" class="btn btn-xs btn-danger"
+                       onclick="return confirm('¿Esta Seguro que desea eliminar el registro?');">Eliminar</a>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
+
