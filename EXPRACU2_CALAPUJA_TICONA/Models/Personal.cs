@@ -14,6 +14,7 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
         {
             Asingacion_Escolar = new HashSet<Asingacion_Escolar>();
             Compensacion = new HashSet<Compensacion>();
+            Control_Horario = new HashSet<Control_Horario>();
             Prestamo = new HashSet<Prestamo>();
         }
 
@@ -38,15 +39,14 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
 
         public DateTime? fecha_nacimiento { get; set; }
 
-        public int? id_horario { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Asingacion_Escolar> Asingacion_Escolar { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Compensacion> Compensacion { get; set; }
 
-        public virtual Control_Horario Control_Horario { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Control_Horario> Control_Horario { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Prestamo> Prestamo { get; set; }

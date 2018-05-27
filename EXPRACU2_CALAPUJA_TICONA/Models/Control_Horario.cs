@@ -8,12 +8,6 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
 
     public partial class Control_Horario
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Control_Horario()
-        {
-            Personal = new HashSet<Personal>();
-        }
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id_horario { get; set; }
@@ -36,7 +30,8 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
 
         public int? conte_horas_extras { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Personal> Personal { get; set; }
+        public int? id_personal { get; set; }
+
+        public virtual Personal Personal { get; set; }
     }
 }

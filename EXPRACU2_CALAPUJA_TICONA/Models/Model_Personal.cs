@@ -8,7 +8,7 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
     public partial class Model_Personal : DbContext
     {
         public Model_Personal()
-            : base("name=Model_Personal")
+            : base("name=Model_Personal1")
         {
         }
 
