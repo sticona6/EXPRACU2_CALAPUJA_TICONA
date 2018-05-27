@@ -1,0 +1,32 @@
+﻿@model EXPRACU2_CALAPUJA_TICONA.Models.Personal
+@{
+    ViewBag.Title = "VER";
+}
+
+<h2>Ver</h2>
+<ol class="breadcrumb">
+    <li><a href="~/Personal/Index">Persona</a></li>
+    <li class="active">@Model.nombres_personal</li>
+</ol>
+
+<div class="panel panel_default">
+    <div class="panel-heading">
+        Informacion de la Personal
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>ID</dt>
+            <dd>@Model.id_personal</dd>
+            <dt>Nombre</dt>
+            <dd>@Model.nombres_personal +""+ @Model.apellidos_personal</dd>
+            <dt>DNI</dt>
+            <dd>@Model.DNI_personal</dd>
+            <dt>Dirección</dt>
+            <dd>@Model.direccion_personal</dd>
+            <dt>Fecha Nacimiento</dt>
+            <dd>@Model.fecha_nacimiento</dd>
+            <dt>Tipo</dt>
+            <dd>@(Model.tipo_personal)</dd>
+        </dl>
+    </div>
+</div>
