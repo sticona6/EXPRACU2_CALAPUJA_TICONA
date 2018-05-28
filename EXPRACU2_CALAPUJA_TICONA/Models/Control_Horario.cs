@@ -35,6 +35,8 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
         public virtual Personal Personal { get; set; }
 
 
+      
+
         //crear el metodo listado
         public List<Control_Horario> Listar()//retornar una collection
         {

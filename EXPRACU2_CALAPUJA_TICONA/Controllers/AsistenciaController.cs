@@ -14,7 +14,8 @@ namespace EXPRACU2_CALAPUJA_TICONA.Controllers
         // GET: Asistencia
         public ActionResult Index(string criterio)
         {
-
+            
+            //control_horario.numeroHoras = (8-(Convert.ToInt16(control_horario.hora_entrada - control_horario.hora_salida)));
             if (criterio == null || criterio == "")
             {
                 return View(control_horario.Listar());

@@ -13,7 +13,9 @@
     <thead>
         <tr>
             <th style="width:50px">codigo</th>
+            <th style="width:50px">Personal</th>
             <th style="width:100px">Fecha</th>
+            <th style="width:100px">Extras</th>
             <th style="width:100px">Hora Entrada</th>
             <th style="width:100px">Hora Salida</th>
             
@@ -25,7 +27,9 @@
         {
             <tr>
                 <th>@(m.id_personal)</th>
+                <th>@(m.Personal.apellidos_personal)</th>
                 <th>@(m.fecha_hora)</th>
+                <th>@(m.hora_entrada - m.hora_salida)</th>
                 <th>@(m.hora_entrada)</th>
                 <th>@(m.hora_salida)</th>
                 
