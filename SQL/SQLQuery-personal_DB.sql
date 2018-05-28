@@ -1,16 +1,16 @@
 create database personal_DB;
-
+go
 use personal_DB;
 
-
+go
 CREATE TABLE Asingacion_Escolar
 ( 
 	id_asignacion_escolar int identity(1,1) NOT NULL ,
 	numero_hijos         int  NOT NULL ,
 	monto_total          decimal(5,2)  NOT NULL ,
 	id_tipo_asignacion   int  NOT NULL ,
-	descripcion          varchar(100)  NULL ,
-	fecha_emision        char(18)  NULL ,
+	descripcion          varchar(200)  NULL ,
+	fecha_emision        datetime  NULL ,
 	id_personal          int  NULL 
 )
 go
@@ -28,7 +28,7 @@ CREATE TABLE Compensacion
 	id_compensacion      int identity(1,1) NOT NULL ,
 	motivo               varchar(150)  NULL ,
 	fecha                datetime  NOT NULL ,
-	id_tipo_compensacion char(18)  NOT NULL ,
+	id_tipo_compensacion int  NULL ,
 	id_personal          int  NULL 
 )
 go
@@ -149,7 +149,7 @@ go
 
 CREATE TABLE Tipo_Compensacion
 ( 
-	id_tipo_compensacion char(18)  NOT NULL ,
+	id_tipo_compensacion int  NOT NULL ,
 	tipo                 varchar(50)  NOT NULL ,
 	monto_compensacion   decimal(5,2)  NOT NULL 
 )
@@ -181,10 +181,10 @@ go
 
 CREATE TABLE Tipo_Pago_Prestamo
 ( 
-	nombre_tipo_pago     char(18)  NULL ,
-	interes              char(18)  NULL ,
-	fecha_utlimo_dia_pago char(18)  NULL ,
-	morosidad            char(18)  NULL ,
+	nombre_tipo_pago     varchar(100)  not null ,
+	interes              int  NULL ,
+	fecha_utlimo_dia_pago datetime NULL ,
+	morosidad            int  NULL ,
 	id_tipo_pago_prestamo int identity(1,1)  NOT NULL 
 )
 go

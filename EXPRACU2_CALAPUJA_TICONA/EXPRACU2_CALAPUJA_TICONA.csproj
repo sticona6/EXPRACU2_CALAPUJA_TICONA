@@ -124,6 +124,8 @@
     <Compile Include="Controllers\HorasExtrasController.cs" />
     <Compile Include="Controllers\PermisoController.cs" />
     <Compile Include="Controllers\PersonalController.cs" />
+    <Compile Include="Controllers\PrestamoController.cs" />
+    <Compile Include="Controllers\Tipo_Pago_PrestamoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -158,6 +160,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Prestamo\Index.cshtml" />
+    <Content Include="Views\Prestamo\Ver.cshtml" />
+    <Content Include="Views\Prestamo\Agregar_Editar.cshtml" />
+    <Content Include="Views\Tipo_Pago_Prestamo\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
