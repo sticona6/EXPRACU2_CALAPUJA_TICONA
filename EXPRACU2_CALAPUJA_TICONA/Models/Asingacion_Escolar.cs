@@ -17,11 +17,10 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
 
         public int id_tipo_asignacion { get; set; }
 
-        [StringLength(100)]
+        [StringLength(200)]
         public string descripcion { get; set; }
 
-        [StringLength(18)]
-        public string fecha_emision { get; set; }
+        public DateTime? fecha_emision { get; set; }
 
         public int? id_personal { get; set; }
 

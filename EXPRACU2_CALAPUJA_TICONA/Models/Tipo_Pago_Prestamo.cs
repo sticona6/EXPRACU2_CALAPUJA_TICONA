@@ -14,17 +14,15 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
             Prestamo = new HashSet<Prestamo>();
         }
 
-        [StringLength(18)]
+        [Required]
+        [StringLength(100)]
         public string nombre_tipo_pago { get; set; }
 
-        [StringLength(18)]
-        public string interes { get; set; }
+        public int? interes { get; set; }
 
-        [StringLength(18)]
-        public string fecha_utlimo_dia_pago { get; set; }
+        public DateTime? fecha_utlimo_dia_pago { get; set; }
 
-        [StringLength(18)]
-        public string morosidad { get; set; }
+        public int? morosidad { get; set; }
 
         [Key]
         public int id_tipo_pago_prestamo { get; set; }

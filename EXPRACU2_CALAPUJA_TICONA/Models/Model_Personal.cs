@@ -8,7 +8,7 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
     public partial class Model_Personal : DbContext
     {
         public Model_Personal()
-            : base("name=Model_Personal3")
+            : base("name=Model_Personal4")
         {
         }
 
@@ -33,18 +33,8 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
                 .Property(e => e.descripcion)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Asingacion_Escolar>()
-                .Property(e => e.fecha_emision)
-                .IsFixedLength()
-                .IsUnicode(false);
-
             modelBuilder.Entity<Compensacion>()
                 .Property(e => e.motivo)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Compensacion>()
-                .Property(e => e.id_tipo_compensacion)
-                .IsFixedLength()
                 .IsUnicode(false);
 
             modelBuilder.Entity<Permiso>()
@@ -118,22 +108,12 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Tipo_Compensacion>()
-                .Property(e => e.id_tipo_compensacion)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Tipo_Compensacion>()
                 .Property(e => e.tipo)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Tipo_Compensacion>()
                 .Property(e => e.monto_compensacion)
                 .HasPrecision(5, 2);
-
-            modelBuilder.Entity<Tipo_Compensacion>()
-                .HasMany(e => e.Compensacion)
-                .WithRequired(e => e.Tipo_Compensacion)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<tipo_Licencia>()
                 .Property(e => e.tipo)
@@ -145,22 +125,6 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
 
             modelBuilder.Entity<Tipo_Pago_Prestamo>()
                 .Property(e => e.nombre_tipo_pago)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Tipo_Pago_Prestamo>()
-                .Property(e => e.interes)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Tipo_Pago_Prestamo>()
-                .Property(e => e.fecha_utlimo_dia_pago)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Tipo_Pago_Prestamo>()
-                .Property(e => e.morosidad)
-                .IsFixedLength()
                 .IsUnicode(false);
         }
     }

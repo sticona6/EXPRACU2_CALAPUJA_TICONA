@@ -15,8 +15,8 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
         }
 
         [Key]
-        [StringLength(18)]
-        public string id_tipo_compensacion { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int id_tipo_compensacion { get; set; }
 
         [Required]
         [StringLength(50)]

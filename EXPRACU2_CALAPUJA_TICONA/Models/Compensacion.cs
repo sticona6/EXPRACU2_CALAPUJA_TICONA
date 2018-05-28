@@ -17,9 +17,7 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
 
         public DateTime fecha { get; set; }
 
-        [Required]
-        [StringLength(18)]
-        public string id_tipo_compensacion { get; set; }
+        public int? id_tipo_compensacion { get; set; }
 
         public int? id_personal { get; set; }
 
