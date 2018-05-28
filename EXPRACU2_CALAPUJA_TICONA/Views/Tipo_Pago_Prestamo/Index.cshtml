@@ -1,0 +1,46 @@
+﻿@model List<EXPRACU2_CALAPUJA_TICONA.Models.Tipo_Pago_Prestamo>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="page-header">
+    <a href="~/Tipo_Pago_Prestamo/Agregar_Editar/"
+       class="btn btn-default pull-rigth">Nuevo Tipo_Pago_Prestamo</a>
+    Tipo_Pago_Prestamo
+</h2>
+
+<table class="table table-striped table-bordered" id="datatable">
+    <thead>
+        <tr>
+            <th style="width:50px">Id</th>
+            <th style="width:100px">Nombre Tipo Pago</th>
+            <th style="width:100px">Interes</th>
+            <th style="width:100px">Morosidad</th>
+            <th style="width:250px"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <th>@(m.id_tipo_pago_prestamo)</th>
+                <th>@(m.nombre_tipo_pago)</th>
+                <th>@(m.interes)</th>
+                <th>@(m.morosidad)</th>
+               
+
+
+                <th style="align-content:center;">
+                    <a href="~/Tipo_Pago_Prestamo/Ver/@m.id_tipo_pago_prestamo"
+                       class="btn btn-xs btn-warning">Detalles</a>
+                    <a href="~/Tipo_Pago_Prestamo/Agregar_Editar/@m.id_tipo_pago_prestamo"
+                       class="btn btn-xs btn-primary">Modificar</a>
+                    <a href="~/Tipo_Pago_Prestamo/Eliminar/@m.id_tipo_pago_prestamo"
+                       class="btn btn-xs btn-danger"
+                       onclick="return confirm('¿Esta Seguro de Eliminar el registro?');">Eliminar</a>
+
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>

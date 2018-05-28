@@ -1,0 +1,46 @@
+﻿@model EXPRACU2_CALAPUJA_TICONA.Models.Prestamo
+@{
+    ViewBag.Title = "Ver";
+}
+
+<h2>Ver</h2>
+
+<ol class="breadcrumb">
+    <li><a href="~/Prestamo/Index">Prestamo</a></li>
+    <li class="active">@Model.Personal.apellidos_personal , @Model.Personal.nombres_personal</li>
+</ol>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Informacion del Prestamo
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>ID</dt>
+            <dd>@Model.id_prestamo</dd>
+            <dt>Razon</dt>
+            <dd>@Model.razon</dd>
+            <dt>Descripcion</dt>
+            <dd>@Model.descripcion</dd>
+            <dt>Monto</dt>
+            <dd>@Model.monto</dd>
+
+            <dt>Apellidos</dt>
+            <dd>@Model.Personal.apellidos_personal</dd>
+            <dt>Nombre</dt>
+            <dd>@Model.Personal.nombres_personal</dd>
+            <dt>Fecha Prestamo</dt>
+            <dd>@Model.fecha_prestamo</dd>
+            <dt>Dia de Pago</dt>
+            <dd>@Model.fecha_pago</dd>
+            <dt>Tipo De Pago</dt>
+            <dd>@Model.Tipo_Pago_Prestamo.nombre_tipo_pago</dd>
+            <dt>Interes</dt>
+            <dd>@Model.Tipo_Pago_Prestamo.interes</dd>
+            <dt>Morosidad</dt>
+            <dd>@Model.Tipo_Pago_Prestamo.morosidad</dd>
+            
+        </dl>
+
+    </div>
+</div>

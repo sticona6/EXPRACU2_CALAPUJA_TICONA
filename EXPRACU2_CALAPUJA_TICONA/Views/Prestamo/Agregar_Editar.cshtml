@@ -1,0 +1,78 @@
+﻿@model EXPRACU2_CALAPUJA_TICONA.Models.Prestamo
+@{
+    ViewBag.Title = (Model.id_prestamo > 0 ? Model.Personal.nombres_personal : "Nuevo Registro");
+    List<EXPRACU2_CALAPUJA_TICONA.Models.Personal> personal = ViewBag.Personal;
+    List<EXPRACU2_CALAPUJA_TICONA.Models.Tipo_Pago_Prestamo> tipo_pago_prestamo = ViewBag.Tipo_Pago_Prestamo;
+}
+
+<h2>Agregar / Editar</h2>
+
+<ol class="breadcrumb">
+    <li><a href="~/Prestamo">Prestamo</a></li>
+    <li class="active">@(Model.id_prestamo > 0 ? Model.razon : "Nuevo Registro")</li>
+</ol>
+@using (Html.BeginForm("Guardar", "Prestamo", FormMethod.Post, new { id = "frm-prestamo" }))
+{
+    @Html.HiddenFor(x => x.id_prestamo)
+    <div class="panel panel-default">
+        <div class="paneñ-heading">Informacion del Prestamo</div>
+        <div class="panel-body">
+
+            <div class="form-group">
+                @Html.Label("Id:")
+                @Html.TextBoxFor(x => x.id_prestamo, new { @class = "form-control", disabled = true })
+            </div>
+            <div class="form-group">
+                @Html.Label("Razon del Prestamo:")
+                @Html.TextBoxFor(x => x.razon, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Descripcion:")
+                @Html.TextBoxFor(x => x.descripcion, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Monto:")
+                @Html.TextBoxFor(x => x.monto, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Fecha de Prestamo:")
+                <input name="fecha_prestamo" id="date" type="date" class="form-control">
+            </div>
+            
+
+            <div class="form-group">
+                @Html.Label("Fecha de Pago:")
+                <input name="fecha_pago" id="date" type="date" class="form-control">
+            </div>
+            <div class="form-group">
+                @Html.Label("Pago:")
+                <select name="id_tipo_pago_prestamo" class="form-control">
+                    <option @(Model.id_tipo_pago_prestamo.Equals("") ? "selected" : "") value="">-Seleccione-</option>
+                    @foreach (var p in tipo_pago_prestamo)
+                    {
+                        <option @(Model.id_tipo_pago_prestamo.Equals(p.id_tipo_pago_prestamo) ? "selected" : "") value="@p.id_tipo_pago_prestamo"> @p.nombre_tipo_pago</option>
+                    }
+                </select>
+                @Html.ValidationMessageFor(x => x.id_tipo_pago_prestamo, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Personal:")
+                <select name="id_personal" class="form-control">
+                    <option @(Model.id_personal.Equals("") ? "selected" : "") value="">-Seleccione-</option>
+                    @foreach (var p in personal)
+                    {
+                        <option @(Model.id_personal.Equals(p.id_personal) ? "selected" : "") value="@p.id_personal">@p.apellidos_personal, @p.nombres_personal</option>
+                    }
+                </select>
+                @Html.ValidationMessageFor(x => x.id_personal, null, new { @class = "label label-danger" })
+            </div>
+
+            
+
+        </div>
+    </div>
+    <div class="text-right">
+        <button type="submit" class="btn btn-primary">Grabar</button>
+        <a href="~/Prestamo" class="btn btn-danger">Cancelar</a>
+    </div>
+}   
