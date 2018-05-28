@@ -168,6 +168,9 @@
     <Content Include="Views\Prestamo\Index.cshtml" />
     <Content Include="Views\Prestamo\Ver.cshtml" />
     <Content Include="Views\Tipo_Pago_Prestamo\Index.cshtml" />
+    <Content Include="Views\Tipo_Pago_Prestamo\Ver.cshtml" />
+    <Content Include="Views\Asistencia\Index.cshtml" />
+    <Content Include="Views\Asistencia\Agregar_Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -177,7 +180,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Asistencia\" />
     <Folder Include="Views\HorasExtras\" />
     <Folder Include="Views\Permiso\" />
   </ItemGroup>

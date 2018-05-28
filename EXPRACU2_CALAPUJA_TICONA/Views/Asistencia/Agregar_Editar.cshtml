@@ -1,0 +1,48 @@
+﻿@model EXPRACU2_CALAPUJA_TICONA.Models.Control_Horario
+@{
+    ViewBag.Title = (Model.id_horario > 0 ? Model.Personal.nombres_personal : "Nuevo Registro");
+    List<EXPRACU2_CALAPUJA_TICONA.Models.Personal> personal = ViewBag.Personal;
+
+}
+<h2>Agregar / Editar</h2>
+
+<ol class="breadcrumb">
+    <li><a href="~/Control_Horario">Control Horario</a></li>
+    <li class="active">@(Model.id_horario > 0 ? Model.Personal.nombres_personal : "Nuevo Registro")</li>
+</ol>
+@using (Html.BeginForm("Guardar", "Asistencia", FormMethod.Post, new { id = "frm-control_horario" }))
+{
+    @Html.HiddenFor(x => x.id_horario)
+    <div class="panel panel-default">
+        <div class="paneñ-heading">Informacion del Control Horario</div>
+        <div class="panel-body">
+
+            <div class="form-group">
+                @Html.Label("Id:")
+                @Html.TextBoxFor(x => x.id_horario, new { @class = "form-control", disabled = true })
+            </div>
+            
+            <div class="form-group">
+                @Html.Label("Codigo Personal:")
+                @Html.TextBoxFor(x => x.id_personal, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Fecha:")
+                <input name="fecha_hora" id="date" type="date" class="form-control" value="">
+            </div>
+            <div class="form-group">
+                @Html.Label("Hora Entrada:")
+                <input name="hora_entrada" id="time type="date" class="form-control" value="">
+            </div>
+            <div class="form-group">
+                @Html.Label("Hora Salida:")
+                <input name="hora_salida" type="time" class="form-control" />
+            </div>
+          
+        </div>
+    </div>
+    <div class="text-right">
+        <button type="submit" class="btn btn-primary">Grabar</button>
+        <a href="~/Control_Horario" class="btn btn-danger">Cancelar</a>
+    </div>
+}   

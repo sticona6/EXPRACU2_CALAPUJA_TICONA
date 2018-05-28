@@ -1,0 +1,46 @@
+﻿@model List<EXPRACU2_CALAPUJA_TICONA.Models.Control_Horario>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="page-header">
+    <a href="~/Asistencia/Agregar_Editar/"
+       class="btn btn-default pull-rigth">Nuevo Control_Horario</a>
+    Control_Horario
+</h2>
+
+<table class="table table-striped table-bordered" id="datatable">
+    <thead>
+        <tr>
+            <th style="width:50px">codigo</th>
+            <th style="width:100px">Fecha</th>
+            <th style="width:100px">Hora Entrada</th>
+            <th style="width:100px">Hora Salida</th>
+            
+            <th style="width:250px"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <th>@(m.id_personal)</th>
+                <th>@(m.fecha_hora)</th>
+                <th>@(m.hora_entrada)</th>
+                <th>@(m.hora_salida)</th>
+                
+                
+                <th style="align-content:center;">
+                    <a href="~/Asistencia/Ver/@m.id_horario"
+                       class="btn btn-xs btn-warning">Detalles</a>
+                    <a href="~/Asistencia/Agregar_Editar/@m.id_horario"
+                       class="btn btn-xs btn-primary">Modificar</a>
+                    <a href="~/Asistencia/Eliminar/@m.id_horario"
+                       class="btn btn-xs btn-danger"
+                       onclick="return confirm('¿Esta Seguro de Eliminar el registro?');">Eliminar</a>
+
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>

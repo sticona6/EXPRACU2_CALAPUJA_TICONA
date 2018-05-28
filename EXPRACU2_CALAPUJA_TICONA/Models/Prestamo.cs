@@ -87,9 +87,7 @@ namespace EXPRACU2_CALAPUJA_TICONA.Models
         public List<Prestamo> Buscar(string criterio)//retornar una collection
         {
             var prestamo = new List<Prestamo>();
-            string estadousu = "";
-            if (criterio.Equals("Activo")) estadousu = "A";
-            if (criterio == "Inactivo") estadousu = "I";
+            
 
             try
             {

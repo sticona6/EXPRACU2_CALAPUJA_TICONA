@@ -58,7 +58,8 @@ namespace EXPRACU2_CALAPUJA_TICONA.Controllers
         //Guardar
         public ActionResult Guardar(Prestamo prestamo)
         {
-
+            ViewBag.Personal = Personal.Listar();
+            ViewBag.Tipo_Pago_Prestamo = Tipo_Pago_Prestamo.Listar();
             if (ModelState.IsValid)
             {
                 prestamo.Guardar();
